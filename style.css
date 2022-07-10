@@ -1,0 +1,20 @@
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+}
+
+.container{
+    /* height: 80vh;
+    width: 30%; */
+    /* border: 1px solid red; */
+}
+.card{
+    height: 70vh;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    background-color: #E4E9F7;
+}

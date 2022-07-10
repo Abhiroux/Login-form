@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Edu+QLD+Beginner:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Demo Login Page</title>
+
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        body{
+            background-color: white;
+        }
+        form{
+        }
+        .login-container{
+            
+            background-color: rgb(219, 226, 222);
+            border-top-right-radius: 30px;
+            border-bottom-right-radius: 30px;
+        }
+        .img-box::before{
+            content: "";
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            height: 100%;
+            width: 100%;
+            
+            background-color: rgb(219, 226, 222);
+            border-bottom-left-radius: 30px;
+            border-top-left-radius: 30px;
+            z-index: -1;
+
+        }
+        .img-box{
+            height: 30em;
+            overflow: scroll;
+              
+        }
+        .row{
+            box-shadow: 10px -10px 30px rgba(41, 40, 40, 0.541);
+            border-radius: 30px;
+        }
+
+        
+
+        @media screen and (max-width: 992px) {
+            .img-box{
+                height: 200px;
+                margin: 0px;
+            }
+            .img-box::before{
+                border-top-right-radius: 30px;
+                border-top-left-radius: 30px;
+                border-bottom-left-radius: 0px;
+            }
+            .login-container{
+                border-bottom-left-radius: 30px;
+                border-bottom-right-radius: 30px;
+                border-top-right-radius: 0px;
+            }
+        }
+        @media screen and (max-width: 575px){
+            .login-container{
+                border-radius: 30px;
+                width: 100%;
+            }
+        }
+
+    
+        .modal-dialog {
+            max-width: 100vw;
+            margin: 0px;
+            padding: 0px;
+        }
+        .modal-content{
+            background-color: transparent;
+        }
+        #cross-btn{
+            background-color: rgb(219, 226, 222);
+            color: rgb(0, 0, 0);
+            border: 1px solid white;
+            padding: 20px;
+            border-radius: 34px;
+            width: 5%;
+            display: block;
+            margin: 0px auto;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand">Navbar</a>
+        <form class="form-inline">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="button" data-toggle="modal" data-target="#loginModal" >login</button>
+        </form>
+      </nav>
+    
+    <div id="loginModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="cross-btn">
+                    <span aria-hidden="true" id="cross">&times;</span>
+                  </button>
+                <div class="modal-body">
+                    
+                    <!-- <h1>Hello World</h1>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus dolores quo nesciunt enim nobis perferendis ex earum cupiditate nemo alias, quidem ab illum deleniti doloribus. Asperiores, aliquam quidem! Recusandae, maiores?</p> -->
+                    <section class="form mt-5">
+                        <div class="container">
+                            <div class="row no-gutters">
+                                <div class="col-lg-6 img-box d-none d-lg-block d-sm-block px-5 pt-5">
+                                    <!-- <img src="IMAGES/Frame 5 (1).png" alt="Smart Campus" class="img-fluid"> -->
+                                    <form action="" class="mx-sm-4">
+                                        <img src="IMAGES/Frame 5 (1).png" alt="Smart Campus" class="img-fluid" width="200px">
+                                        <h2>Create Account</h2>
+                                        <div class="form-row my-3">
+                                            <div class="col-lg-10">
+                                                <input type="text" name="FullName" id="fullName" class="form-control" placeholder="Full Name">
+                                            </div><!--input-group-->
+                                        </div><!--form-row-->
+                                        <div class="form-row my-3">
+                                            <div class="col-lg-10 input-group">
+                                                <div class="input-group-prepend">
+                                                    <i class="fa-light fa-at input-group-text"></i>
+                                                </div><!--input-group-prepend-->
+                                                <input type="email" name="Email" id="emailId" class="form-control" placeholder="Email">
+                                            </div><!--input-group-->
+                                        </div><!--form-row-->
+                                        <div class="form-row my-3">
+                                            <div class="col-lg-10 input-group">
+                                                <div class="input-group-prepend">
+                                                    <i class="fa-solid fa-lock input-group-text"></i>
+                                                </div><!--input-group-prepend-->
+                                                <input type="password" name="password" id="signup-password" class="form-control" placeholder="Password">
+                                            </div><!-- col-lg-6 -->
+                                        </div><!--form-row-->
+                                        <div class="form-row my-3">
+                                            <div class="col-lg-10 input-group">
+                                                <input type="password" name="password" id="confirm-password" class="form-control" placeholder="Confirm Password">
+                                            </div><!-- col-lg-6 -->
+                                        </div><!--form-row-->
+                                        <div class="form-row">
+                                            <div class="col-lg-10">
+                                                <button type="button" class="btn btn-dark btn-block mb-5 mt-2">Sign up</button>
+                                            </div><!--col-lg-6-->
+                                        </div><!--form-row-->
+                                    </form>
+                                </div><!--col-lg-5-->
+
+                                 
+                                <div class="col-lg-6 login-container px-5 pt-5">
+                                    <form action="" class="mx-sm-4">
+                                        <img src="IMAGES/Frame 5 (1).png" alt="Smart Campus" class="img-fluid" width="200px">
+                                        <h2>ogin to your account</h2>
+                                        <div class="form-row my-3">
+                                            <div class="col-lg-10 input-group">
+                                                <div class="input-group-prepend">
+                                                    <i class="fa-solid fa-user input-group-text"></i>
+                                                </div><!--input-group-prepend-->
+                                                <input type="email" name="Email" id="emailId" class="form-control" placeholder="Username">
+                                            </div><!--input-group-->
+                                        </div><!--form-row-->
+                                        <div class="form-row my-3">
+                                            <div class="col-lg-10 input-group">
+                                                <div class="input-group-prepend">
+                                                    <i class="fa-solid fa-lock input-group-text"></i>
+                                                </div><!--input-group-prepend-->
+                                                <input type="password" name="password" id="login-password" class="form-control" placeholder="Password">
+                                            </div><!-- col-lg-6 -->
+                                        </div><!--form-row-->
+                                        <div class="form-check">
+                                            <input type="checkbox" name="checkbox" id="Remember" class="form-check-input">
+                                            <label for="Remember" class="form-check-label">Remember Me</label>
+                                        </div><!--form-check-->
+                                        <div class="form-row">
+                                            <div class="col-lg-10">
+                                                <button type="button" class="btn btn-dark btn-block mb-5 mt-2">Login</button>
+                                            </div><!--col-lg-6-->
+                                        </div><!--form-row-->
+                                        <a href="#">Forget Password</a>
+                                        <p>Don't have an account? <a href="#">Register here</a></p>
+                                    </form>
+                                </div><!--col-lg-6-->
+                            </div><!--row-->
+                        </div><!--container-->
+                    </section>
+                    
+
+                </div><!--modal-body-->
+            </div><!--modal-content-->
+        </div><!--modal-dialog-->
+    </div><!--loginModal-->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+
+</body>
+</html>
